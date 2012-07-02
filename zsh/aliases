@@ -6,6 +6,10 @@ elif [[ $platform == 'Darwin' ]]; then
   alias a='ls -lrthG'
 fi
 
+# eset aliases
+alias sym='php symfony' #shortcut to symfony
+alias propbuild='sym propel:build --model;sym propel:build --filters;sym propel:build --forms;sym cc '
+
 alias amend="git commit --amend"
 alias asu="cd ~/code/rails/activesupport"
 alias aliases='vim ~/.dotfiles/zsh/aliases'
