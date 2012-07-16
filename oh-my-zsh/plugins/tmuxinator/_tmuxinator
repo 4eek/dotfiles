@@ -25,7 +25,7 @@ case $state in
   args)
     case $line[1] in
       start|open|copy|delete)
-        _configs=(`tmuxinator list | sed '1d'`)
+        _configs=(`tmuxinator list | sed -n 's/^[ \t]\+//p'`)
         _values 'configs' $_configs
         ret=0
         ;;
