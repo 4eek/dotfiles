@@ -10,7 +10,7 @@ sourcetreemerge.executable=/Applications/SourceTree.app/Contents/Resources/opend
 sourcetreebulkmerge.premerge=False
 sourcetreebulkmerge.binary=True
 [ui]
-ignore=/Users/4eek/.hgignore_global
+ignore=$HOME/.hgignore_global
 username=Kevin G Fourie <kevin@4e.co.za>
 [extdiff]
 cmd.sourcetreediff=opendiff

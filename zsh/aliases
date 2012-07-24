@@ -101,3 +101,13 @@ alias db-backups='heroku pgbackups --remote production'
 # tmux
 alias tmux="TERM=screen-256color-bce tmux"
 alias mux="tmuxinator"
+
+# ec2 environments
+alias env-4e="source ~/.ec2/env-4e"
+alias env-eset="source ~/.ec2/env-eset"
+
+# disable autocorrect for some things
+alias heroku='nocorrect heroku'
+alias knife='nocorrect knife'
+alias cc-knife='nocorrect cc-knife'
+
