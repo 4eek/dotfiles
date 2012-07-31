@@ -47,11 +47,20 @@ ZSH_THEME_GIT_PROMPT_AHEAD=" %{$RED%}(!)"
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %{$WHITE%}[%{$YELLOW%}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$WHITE%}]"
 
+# User part, color coded by privileges
+local user="%(!.%{$fg[red]%}.%{$fg[blue]%})%n%{$reset_color%}"
+
+# Hostname part.
+local host="@$(hostname)%{$reset_color%}"
+
 # Smiley
 local smiley="%(?,%{$GREEN%}☺%{$reset_color%},%{$RED%}☹%{$reset_color%})"
 
+# Timestamp
+local timestamp="%(?.%{$fg[green]%}.%{$fg[red]%})%*%{$reset_color%}"
+
 # Prompt format
 PROMPT='
-%~%u$(parse_git_dirty)$(git_prompt_status)$(git_prompt_ahead)%{$RESET_COLOR%}
+[$timestamp](${user}${host})%~%u$(parse_git_dirty)$(git_prompt_status)$(git_prompt_ahead)%{$RESET_COLOR%}
 ${smiley} %{$RESET_COLOR%} '
 RPROMPT='$(rbenv version-name) %{$GREEN%}$(current_branch)$(git_prompt_short_sha)%{$RESET_COLOR%}'
