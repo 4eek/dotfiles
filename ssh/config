@@ -1,0 +1,29 @@
+# Host github.com
+#   User git
+#   Port 22
+#   Hostname github.com
+#   IdentityFile ~/.ssh/id_dsa-4eek
+#   TCPKeepAlive yes
+#   IdentitiesOnly yes
+# 
+# For doing initial GitHub commits
+#Host github.com
+#  User git
+#  Port 22
+#  Hostname github.com
+#  IdentityFile ~/.ssh/id_dsa-4eek
+#  TCPKeepAlive yes
+#  IdentitiesOnly yes
+#
+# Host siteup.co
+#   User ubuntu
+#   Port 22
+#   Hostname siteup.co
+#   IdentityFile ~/.ssh/id_rsa-siteup.pem
+#   TCPKeepAlive yes
+#   IdentitiesOnly yes
+# 
+Host *.eset.co.za
+  ForwardAgent yes
+Host 10.32.1.251
+  ForwardAgent yes
