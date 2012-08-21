@@ -215,6 +215,9 @@ set list
 set background=dark
 colorscheme solarized
 
+" Extension customisation
+au BufNewFile,BufRead *.apib set filetype=ruby
+
 " ========================================================================
 " End of things set by me.
 " ========================================================================
