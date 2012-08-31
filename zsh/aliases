@@ -107,7 +107,7 @@ alias mux="tmuxinator"
 # environments
 alias env-4e="source ~/.envrc/env-4e"
 alias env-eset="source ~/.envrc/env-eset"
-alias env-euca2="source ~/.envrc/euca2/eucarc"
+alias env-euca2="source ~/.virtualenvs/euca2ools/bin/activate; source ~/.envrc/euca2/eucarc"
 
 # disable autocorrect for some things
 alias heroku='nocorrect heroku'
