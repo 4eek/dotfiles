@@ -1,6 +1,6 @@
 [user]
-	email = kevin@4e.co.za
-	name = Kevin G. Fourie
+    email = kevin@4e.co.za
+    name = Kevin G. Fourie
 [color]
     diff = auto
     status = auto
@@ -61,11 +61,11 @@
 [difftool "Kaleidoscope"]
     cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [branch "develop"]
-        ; mergeoptions = --no-ff --no-commit
+    ; mergeoptions = --no-ff --no-commit
 [branch "master"]
-        ; mergeoptions = --no-ff --no-commit
+    ; mergeoptions = --no-ff --no-commit
 [branch "staging"]
-        ; mergeoptions = --no-ff --no-commit
+    ; mergeoptions = --no-ff --no-commit
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
     path = 
