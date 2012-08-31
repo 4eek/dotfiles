@@ -114,3 +114,7 @@ alias heroku='nocorrect heroku'
 alias knife='nocorrect knife'
 alias cc-knife='nocorrect cc-knife'
 
+# coreutils on OSX
+if [[ $platform == 'Darwin' ]]; then
+  alias readlink='greadlink'
+fi
