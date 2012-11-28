@@ -14,7 +14,16 @@ augroup myfiletypes
   autocmd!
   " autoindent with two spaces, always expand tabs
   autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+  autocmd FileType go set ai sw=4 sts=4 et
 augroup END
+" ================
+
+" ================
+" Go stuff
+" ================
+autocmd WinEnter *.go set ai sw=4 ts=4 sta et fo=croql list!
+autocmd BufEnter *.go set ai sw=4 ts=4 sta et fo=croql list!
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " ================
 
 let mapleader = "\\"
@@ -256,3 +265,4 @@ if has("autocmd")
   augroup END
 
 endif " has("autocmd")
+
