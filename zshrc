@@ -42,9 +42,6 @@ DISABLE_AUTO_TITLE="true"
 stty start undef
 stty stop undef
 
-# Tmuxinator
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -65,3 +62,4 @@ mvim()
   (unset GEM_PATH GEM_HOME; command mvim "$@")
 }
 
+fpath=($HOME/.tmuxinator/completion ${fpath})
