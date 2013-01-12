@@ -106,7 +106,7 @@ alias mux="tmuxinator"
 
 # environments
 alias env-4e="source ~/.envrc/env-4e"
-alias env-eset="source ~/.envrc/env-eset"
+alias env-4d="source ~/.envrc/env-4d"
 alias env-euca2="source ~/.virtualenvs/euca2ools/bin/activate; source ~/.envrc/euca2/eucarc"
 
 # disable autocorrect for some things

@@ -3,6 +3,9 @@ export PATH=$HOME/go/bin:$HOME/.rbenv/bin:/usr/local/bin:$HOME/bin:/usr/local/sb
 # rbenv
 eval "$(rbenv init -)"
 
+# Node
+export NODE_PATH=/usr/local/lib/node_modules
+
 # Google Go Lang Vars
 export GOROOT=$HOME/go
 export GOOS=darwin

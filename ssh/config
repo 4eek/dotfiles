@@ -27,3 +27,5 @@ Host *.eset.co.za
   ForwardAgent yes
 Host 10.32.1.251
   ForwardAgent yes
+Host *.local
+  ForwardAgent yes
