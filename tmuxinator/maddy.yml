@@ -2,7 +2,7 @@
 # you can make as many tabs as you wish...
 
 project_name: maddy
-project_root: ~/code/madebythem/maddy
+project_root: ~/code/4eek/maddy
 socket_name: # Not needed.  Remove to use default socket
 rvm:
 pre:
@@ -11,7 +11,7 @@ tabs:
       layout: main-vertical
       panes:
         - vim
-        - git lol
         - #empty, will just run plain zsh
+        - omglog
   - shell:
   - git: git ll
