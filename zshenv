@@ -18,4 +18,5 @@ export GOPATH=$HOME/code/4eek/go:$HOME/code/4D/go
 export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`
 export EC2_HOME=$HOME/bin/ec2-api-tools
 export EC2_AMITOOL_HOME=$HOME/bin/ec2-ami-tools
-export PATH=$PATH:$EC2_HOME/bin:$EC2_AMITOOL_HOME/bin
+export AWS_EB_HOME=$HOME/bin/AWS-ElasticBeanstalk-CLI
+export PATH=$PATH:$EC2_HOME/bin:$EC2_AMITOOL_HOME/bin:$AWS_EB_HOME/eb/linux/python2.7/
