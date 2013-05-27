@@ -1,3 +1,20 @@
+Host heroku.com
+  User git
+  Port 22
+  Hostname heroku.com
+  IdentityFile ~/.ssh/id_rsa_lobsterink
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+
+# For doing 4eek maddy
+# Host heroku.com
+#   User git
+#   Port 22
+#   Hostname heroku.com
+#   IdentityFile ~/.ssh/id_rsa
+#   TCPKeepAlive yes
+#   IdentitiesOnly yes
+
 # Host github.com
 #   User git
 #   Port 22

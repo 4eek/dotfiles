@@ -230,6 +230,12 @@ colorscheme solarized
 " Extension customisation
 au BufNewFile,BufRead *.apib set filetype=ruby
 
+" Toggle spell checking on and off with `,s`
+nmap <silent> <leader>sp :set spell!<CR>
+
+" Set region to British English
+set spelllang=en_gb
+
 " ========================================================================
 " End of things set by me.
 " ========================================================================

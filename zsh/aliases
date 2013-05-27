@@ -85,6 +85,7 @@ alias v='cd ~/code/vertical-server'
 alias vi='vim'
 alias vu='cd ~/code/vim-university'
 alias y='cd ~/code/ybuy'
+alias ghw='open https://github.com/LobsterInk/lobsterink'
 
 # Heroku staging
 alias staging-console='heroku run console --remote staging'
@@ -108,6 +109,7 @@ alias mux="tmuxinator"
 # environments
 alias env-4e="source ~/.envrc/env-4e"
 alias env-4d="source ~/.envrc/env-4d"
+alias env-ink="source ~/.envrc/env-ink"
 alias env-euca2="source ~/.virtualenvs/euca2ools/bin/activate; source ~/.envrc/euca2/eucarc"
 
 # disable autocorrect for some things
