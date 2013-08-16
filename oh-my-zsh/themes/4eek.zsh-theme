@@ -5,7 +5,7 @@ PROMPT='
 %~
 ${smiley}  %{$reset_color%}'
 
-RPROMPT='%{$fg[white]%} $(rbenv version-name)$(~/bin/git-cwd-info.rb)%{$reset_color%}'
+#RPROMPT='%{$fg[white]%} $(rbenv version-name)$(~/bin/git-cwd-info.rb)%{$reset_color%}'
 # ------------------------------------------------------------------------
 # Kevin G. Fourie oh-my-zsh theme
 # (Needs Git plugin for current_branch method)
@@ -63,4 +63,5 @@ local timestamp="%(?.%{$fg[green]%}.%{$fg[red]%})%*%{$reset_color%}"
 PROMPT='
 [$timestamp](${user}${host})%~%u$(parse_git_dirty)$(git_prompt_status)$(git_prompt_ahead)%{$RESET_COLOR%}
 ${smiley} %{$RESET_COLOR%} '
-RPROMPT='$(rbenv version-name) %{$GREEN%}$(current_branch)$(git_prompt_short_sha)%{$RESET_COLOR%}'
+#RPROMPT='$(rbenv version-name) %{$GREEN%}$(current_branch)$(git_prompt_short_sha)%{$RESET_COLOR%}'
+RPROMPT='$(node -v) %{$GREEN%}$(current_branch)$(git_prompt_short_sha)%{$RESET_COLOR%}'

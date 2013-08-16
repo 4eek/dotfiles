@@ -85,7 +85,8 @@ alias v='cd ~/code/vertical-server'
 alias vi='vim'
 alias vu='cd ~/code/vim-university'
 alias y='cd ~/code/ybuy'
-alias ghw='open https://github.com/LobsterInk/lobsterink'
+alias ghp='open https://github.com/LobsterInk'
+alias tvp='open https://magnum.travis-ci.com/'
 
 # Heroku staging
 alias staging-console='heroku run console --remote staging'

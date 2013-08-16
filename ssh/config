@@ -1,3 +1,8 @@
+Host za01
+Hostname 197.221.52.34
+User kevf
+IdentityFile ~/.ssh/id_rsa_legacyink
+
 Host heroku.com
   User git
   Port 22
