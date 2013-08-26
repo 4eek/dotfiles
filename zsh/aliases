@@ -122,3 +122,6 @@ alias cc-knife='nocorrect cc-knife'
 if [[ $platform == 'Darwin' ]]; then
   alias readlink='greadlink'
 fi
+
+alias hiddenon="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
+alias hiddenoff="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
