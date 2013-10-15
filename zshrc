@@ -69,3 +69,6 @@ fpath=($HOME/.tmuxinator/completion ${fpath})
 
 # Set default iTerm window title to PWD
 echo -ne "\e]1;$PWD\a"
+
+# added by travis gem
+source /Users/kgf/.travis/travis.sh
