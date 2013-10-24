@@ -1,0 +1,23 @@
+# ~/.tmuxinator/inkapi.yml
+# you can make as many tabs as you wish...
+
+project_name: InkAPI
+project_root: ~/code/LobsterInk/inkapi
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - env-ink && vim
+        - env-ink && ls
+        - omglog
+  - watch: env-ink && grunt
+  - server: 
+      layout: main-horizontal
+      panes:
+        - sleep 2 && env-ink && LOG_LEVEL=debug nodemon --debug app.js | ./node_modules/.bin/bunyan
+        - sleep 3 && env-ink && node-inspector --web-port=9000
+  - mongo:
+      layout: main-horizontal
+      panes:
+        - tail -f /usr/local/var/log/mongodb/mongo.log
+        - mongod

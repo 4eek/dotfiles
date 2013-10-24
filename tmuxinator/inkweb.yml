@@ -1,0 +1,14 @@
+# ~/.tmuxinator/inkweb.yml
+# you can make as many tabs as you wish...
+
+project_name: InkWeb
+project_root: ~/code/LobsterInk/inkweb
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - env-ink && vim
+        - env-ink && ls
+        - omglog
+  - watch: env-ink && grunt
+  - server: env-ink && grunt server
