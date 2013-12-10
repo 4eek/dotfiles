@@ -1,0 +1,17 @@
+# ~/.tmuxinator/lobsterink_maddy.yml
+# you can make as many tabs as you wish...
+
+project_name: lobsterink_maddy
+project_root: ~/code/lobsterink/maddy
+socket_name: # Not needed.  Remove to use default socket
+rvm:
+pre:
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        - #empty, will just run plain zsh
+        - omglog
+  - shell:
+  - git: git ll

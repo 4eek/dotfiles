@@ -1,0 +1,18 @@
+# ~/.tmuxinator/inkcert.yml
+# you can make as many tabs as you wish...
+
+project_name: inkcert
+project_root: ~/code/LobsterInk/go/src/github.com/lobsterink/inkcert
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        - vim TODO
+        - omglog
+  - debugger:
+        - /usr/local/bin/gdb
+  - mongod:
+        # - mongod
+  - mongo:
+        # - mongo
