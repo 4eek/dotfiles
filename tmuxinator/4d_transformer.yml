@@ -1,0 +1,24 @@
+# ~/.tmuxinator/4d_transformer.yml
+# you can make as many tabs as you wish...
+
+project_name: 4D Transformer
+project_root: ~/code/4D/ESETSA/4d_transformer
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - env-4d && vim
+        - env-4d #empty, will just run plain bash
+        - omglog
+  - console: env-4d && rails c
+  - database:
+      layout: main-horizontal
+      panes:
+  - logs:
+      layout: main-horizontal
+      panes:
+        - tail -f log/development.log
+  - capistrano:
+  - ssh: echo "ssh server connection"
+  - server: env-4d && rails s
+  - tests:

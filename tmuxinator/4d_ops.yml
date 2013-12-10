@@ -1,0 +1,12 @@
+# ~/.tmuxinator/4d_ops.yml
+# you can make as many tabs as you wish...
+
+project_name: 4D Ops
+project_root: ~/code/4D/ESETSA/4d_ops
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - env-4d && vim
+        - env-4d #empty, will just run plain bash
+        - omglog

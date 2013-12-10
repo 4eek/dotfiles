@@ -1,0 +1,27 @@
+# ~/.tmuxinator/eset_store.yml
+# you can make as many tabs as you wish...
+
+project_name: ESET Store
+project_root: ~/code/4D/ESETSA/eset_store
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - env-4d && vim
+        - env-4d #empty, will just run plain bash
+        - omglog
+  - console: env-4d && rails c
+  - database:
+      layout: main-horizontal
+      panes:
+        - tail -f /usr/local/var/log/mongodb/mongo.log
+        - mongod
+  - logs:
+      layout: main-horizontal
+      panes:
+        - tail -f log/development.log
+        - tail -f /usr/local/var/log/mongodb/mongo.log
+  - capistrano:
+  - ssh: echo "ssh server connection"
+  - server: env-4d && rails s
+  - tests: env-4d && bundle exec guard start

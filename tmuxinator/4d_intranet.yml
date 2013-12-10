@@ -1,0 +1,27 @@
+# ~/.tmuxinator/4d_intranet.yml
+# you can make as many tabs as you wish...
+
+project_name: 4D Intranet
+project_root: ~/code/4D/ESETSA/4d_intranet
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        - #empty, will just run plain bash
+        - omglog
+  - console: rails c
+  - database:
+      layout: main-horizontal
+      panes:
+        - tail -f /usr/local/var/log/mongodb/mongo.log
+        - mongod
+  - logs:
+      layout: main-horizontal
+      panes:
+        - tail -f log/development.log
+        - tail -f /usr/local/var/log/mongodb/mongo.log
+  - capistrano:
+  - ssh: echo "ssh server connection"
+  - server: rails s
+  - tests: bundle exec guard start

@@ -1,0 +1,29 @@
+# ~/.tmuxinator/4d_api_ruby.yml
+# you can make as many tabs as you wish...
+
+project_name: 4D API RUBY
+project_root: ~/code/4D/ESETSA/4d_api_ruby
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        - #empty, will just run plain bash
+        - omglog
+  - console: ./scripts/console.rb
+  - database:
+      layout: main-horizontal
+      panes:
+        - mongo
+        - mongod
+  - logs:
+      layout: main-horizontal
+      panes:
+        - tail -f /usr/local/var/log/mongodb/mongo.log
+  - ssh: echo "ssh server connection"
+  - server: ./scripts/start-dev.sh
+  - tests:
+      layout: main-horizontal
+      panes:
+        - bundle exec guard start
+        - 

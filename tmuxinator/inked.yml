@@ -1,0 +1,16 @@
+# ~/.tmuxinator/inked.yml
+# you can make as many tabs as you wish...
+
+project_name: inked
+project_root: ~/code/LobsterInk/inked
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        - vim TODO
+        - omglog
+  - mongod:
+        # - mongod
+  - mongo:
+        # - mongo
