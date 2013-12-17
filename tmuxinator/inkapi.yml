@@ -21,3 +21,4 @@ windows:
       panes:
         - tail -f /usr/local/var/log/mongodb/mongo.log
         - mongod
+  - redis: redis-server /usr/local/etc/redis.conf
