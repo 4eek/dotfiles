@@ -14,7 +14,7 @@ windows:
   - server: 
       layout: main-horizontal
       panes:
-        - sleep 2 && env-ink && LOG_LEVEL=debug nodemon --debug app.js | ./node_modules/.bin/bunyan
+        - sleep 2 && env-ink && LOG_LEVEL=debug nodemon --debug server.js | ./node_modules/.bin/bunyan
         - sleep 3 && env-ink && node-inspector --web-port=9000
   - mongo:
       layout: main-horizontal
