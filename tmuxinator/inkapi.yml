@@ -20,5 +20,5 @@ windows:
       layout: main-horizontal
       panes:
         - tail -f /usr/local/var/log/mongodb/mongo.log
-        - mongod
+        - mongod --rest --profile 1 --slowms 10
   - redis: redis-server /usr/local/etc/redis.conf

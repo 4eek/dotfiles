@@ -3,15 +3,14 @@
 
 project_name: gofaker
 project_root: ~/code/4eek/go/src/github.com/4eek/gofaker
-tabs:
+windows:
   - editor:
       layout: main-vertical
       panes:
         - vim
         - #empty, will just run plain bash
         - omglog
-  - debugger:
-        - /usr/local/bin/gdb
+  - debugger: #/usr/local/bin/gdb
   - mongod:
         # - mongod
   - mongo:
