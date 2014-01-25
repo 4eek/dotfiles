@@ -10,6 +10,7 @@ fi
 alias sym='php symfony' #shortcut to symfony
 alias propbuild='sym propel:build --model;sym propel:build --filters;sym propel:build --forms;sym cc '
 
+alias getmyip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias amend="git commit --amend"
 alias asu="cd ~/code/rails/activesupport"
 alias aliases='vim ~/.dotfiles/zsh/aliases'
