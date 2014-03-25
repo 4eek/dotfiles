@@ -1,6 +1,6 @@
 [user]
 	email = kevin@4e.co.za
-	name = Kevin G. Fourie
+	name = Kevin Fourie
 [color]
     diff = auto
     status = auto
@@ -13,8 +13,9 @@
     whitespace = warn
 [core]
     editor = vim
-    quotepath = false
+	quotepath = false
     excludesfile = ~/.gitignore
+	precomposeunicode = true
 [alias]
   # Log display with train tracks.
     l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
@@ -62,3 +63,6 @@
 	trustExitCode = true
 [mergetool]
 	keepBackup = true
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
