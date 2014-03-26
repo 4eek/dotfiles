@@ -10,7 +10,7 @@ export NODE_PATH=/usr/local/lib/node_modules
 export GOROOT=$HOME/go
 export GOOS=darwin
 export GOARCH=amd64
-export GOBIN=$HOME/bin
+export GOBIN=$GOROOT/bin
 export PATH=$PATH:$GOBIN
 export GOPATH=$HOME/code/4eek/go:$HOME/code/4D/go:$HOME/code/lobsterink/go
 
