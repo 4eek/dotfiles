@@ -1,0 +1,25 @@
+# ~/.tmuxinator/lobster-api.yml
+# you can make as many tabs as you wish...
+
+name: LobsterAPI
+root: ~/code/LobsterInk/lobster-api
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - env-ink && vim
+        - env-ink && ls
+        - omglog
+  - watch: env-ink && grunt
+  - server: 
+      layout: main-horizontal
+      panes:
+        - sleep 2 && env-ink && LOG_LEVEL=debug nodemon --debug server.js | ./node_modules/.bin/bunyan
+        - sleep 3 && env-ink && node-inspector --web-port=9000
+  - mongo:
+      layout: main-horizontal
+      panes:
+        - tail -f /usr/local/var/log/mongodb/mongo.log
+        - mongod --config /usr/local/etc/mongod.conf --rest --profile 1 --slowms 10
+  - redis: redis-server /usr/local/etc/redis.conf
