@@ -1,8 +1,9 @@
 # ~/.tmuxinator/inkapi.yml
 # you can make as many tabs as you wish...
 
-project_name: InkAPI
-project_root: ~/code/LobsterInk/inkapi
+name: InkAPI
+root: ~/code/LobsterInk/inkapi
+
 windows:
   - editor:
       layout: main-vertical
@@ -20,5 +21,5 @@ windows:
       layout: main-horizontal
       panes:
         - tail -f /usr/local/var/log/mongodb/mongo.log
-        - mongod --rest --profile 1 --slowms 10
+        - mongod --config /usr/local/etc/mongod.conf --rest --profile 1 --slowms 10
   - redis: redis-server /usr/local/etc/redis.conf
