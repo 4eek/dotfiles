@@ -72,3 +72,9 @@ echo -ne "\e]1;$PWD\a"
 
 # added by travis gem
 source /Users/kgf/.travis/travis.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+source /Users/kgf/gcp/path.zsh.inc
+
+# The next line enables bash completion for gcloud.
+source /Users/kgf/gcp/completion.zsh.inc

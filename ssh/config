@@ -53,6 +53,8 @@ Host *.local
   ForwardAgent yes
 Host 54.220.129.83
   ForwardAgent yes
+Host 54.216.151.161
+  ForwardAgent yes
 
 Host *
   IPQoS 0x00

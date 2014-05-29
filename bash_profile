@@ -9,4 +9,8 @@ if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
 
-eval "$(rbenv init -)"
+# The next line updates PATH for the Google Cloud SDK.
+source /Users/kgf/gcp/path.bash.inc
+
+# The next line enables bash completion for gcloud.
+source /Users/kgf/gcp/completion.bash.inc
