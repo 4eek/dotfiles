@@ -1,80 +1,80 @@
-# Customize to your needs...
-PATH="$HOME/go/bin:/usr/local/bin:$HOME/bin:/usr/local/sbin:/usr/local/mysql/bin:$HOME/bin/ec2-api-tools/bin:/opt/local/bin:/opt/local/sbin:/opt/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/MacGPG2/bin:/usr/local/libexec/git-core"
-
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.dotfiles/oh-my-zsh
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="4eek"
+ZSH_THEME="robbyrussell"
 
-# Never know when you're gonna need to popd!
-setopt AUTO_PUSHD
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Allow completing of the remainder of a command
-bindkey "^N" insert-last-word
-
-# Show contents of directory after cd-ing into it
-chpwd() {
-  ls -lrthG
-}
-
-# Save a ton of history
-HISTSIZE=20000
-HISTFILE=~/.zsh_history
-SAVEHIST=20000
-
-# Set to this to use case-sensitive completion
+# Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
+# Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
-# Uncomment following line if you want to disable colors in ls
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
-# Uncomment following line if you want to disable autosetting terminal title.
-DISABLE_AUTO_TITLE="true"
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
+# Uncomment the following line to disable command auto-correction.
+# DISABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
-# Disable flow control commands (keeps C-s from freezing everything)
-stty start undef
-stty stop undef
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github gem heroku rails3 ruby brew bundler cap compleat knife thor tmuxinator vi-mode pow powder osx history-substring-search thor rbenv)
+plugins=(git osx golang ruby github node npm brew history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
-# Source my custom files after oh-my-zsh so I can override things.
-source $HOME/.dotfiles/zsh/aliases
-source $HOME/.dotfiles/zsh/functions
+# User configuration
 
-export LC_CTYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export EDITOR=vim
+export PATH="/usr/local/heroku/bin:/Users/kgf/gcp/bin:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+# export MANPATH="/usr/local/man:$MANPATH"
 
-mvim()
-{
-  (unset GEM_PATH GEM_HOME; command mvim "$@")
-}
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-fpath=($HOME/.tmuxinator/completion ${fpath})
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-# Set default iTerm window title to PWD
-echo -ne "\e]1;$PWD\a"
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-# added by travis gem
-source /Users/kgf/.travis/travis.sh
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # The next line updates PATH for the Google Cloud SDK.
-source /Users/kgf/gcp/path.zsh.inc
+source /Users/kgf/google-cloud-sdk/path.zsh.inc
 
 # The next line enables bash completion for gcloud.
-source /Users/kgf/gcp/completion.zsh.inc
+source /Users/kgf/google-cloud-sdk/completion.zsh.inc
