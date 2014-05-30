@@ -6,25 +6,12 @@ elif [[ $platform == 'Darwin' ]]; then
   alias a='ls -lrthG'
 fi
 
-# eset aliases
-alias sym='php symfony' #shortcut to symfony
-alias propbuild='sym propel:build --model;sym propel:build --filters;sym propel:build --forms;sym cc '
-
 alias getmyip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias amend="git commit --amend"
-alias asu="cd ~/code/rails/activesupport"
 alias aliases='vim ~/.dotfiles/zsh/aliases'
-alias bake='bundle exec rake'
-alias be='bundle exec'
-alias bi='bundle install'
-alias be='bundle exec'
-alias bu='bundle update'
-alias bunbang='bundle install && !!'
 alias c='cd ~/code'
 alias d='cd ~/.dotfiles'
-alias dbprep='rdm && rdtp'
 alias dr='cd ~/Dropbox'
-alias -g G='| grep'
 alias gad='git add .'
 alias ga='git add -p'
 alias gbc='gdc'
@@ -50,59 +37,12 @@ alias grc='git rebase --continue'
 alias gup='git smart-pull'
 alias gm='git smart-merge'
 alias gl='git smart-log'
-alias grake='rspec --drb spec/ && cucumber --drb features/'
-alias gurad='guard'
-alias h='heroku'
-alias he='cd ~/code/hacker-engine'
-alias hpush='git push heroku'
 alias irb='irb --readline -r irb/completion'
-alias journal='vim ~/Dropbox/docs/journal/2011.txt'
-alias killruby='killall -9 ruby'
-alias pc='production-console'
-alias patch='git format-patch HEAD^ --stdout > patch.diff'
-alias prepdb='dbprep'
-alias remore='!! | more'
-alias reguard='killall -9 ruby ; guard'
-alias rerake='!! && rake'
-alias restart_apache="sudo /etc/init.d/apache2 restart"
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
-alias repush="gpr && gpush"
-alias rc='rails console'
-alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump && rake db:test:prepare'
-alias rdm="be rake db:migrate"
-alias rdtp="be rake db:test:prepare"
-alias rs='bundle install && rails server -p 3001'
-alias safepush='git pull --rebase && bundle install && rdm && rake && git push'
-alias sc='staging-console'
 alias so='source ~/.dotfiles/zsh/aliases'
-alias sp='safepush'
-alias ss='ruby app.rb'
-alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
-alias staging='git push heroku-staging master'
-alias t='cd ~/code/trajectory'
-alias u='cd ..'
-alias v='cd ~/code/vertical-server'
 alias vi='vim'
-alias vu='cd ~/code/vim-university'
-alias y='cd ~/code/ybuy'
 alias ghp='open https://github.com/LobsterInk'
 alias tvp='open https://magnum.travis-ci.com/'
-
-# Heroku staging
-alias staging-console='heroku run console --remote staging'
-alias staging-tail='heroku logs --tail --remote staging'
-
-# Heroku production
-alias production-console='heroku run console --remote production'
-alias production-tail='heroku logs --tail --remote production'
-
-# # Heroku databases
-alias db-pull-staging='heroku db:pull --remote staging --confirm `basename $PWD`-staging'
-alias db-pull-production='heroku db:pull --remote production --confirm `basename $PWD`-production'
-alias db-copy-production-to-staging='heroku pgbackups:restore DATABASE `heroku pgbackups:url --remote production` --remote staging  --confirm `basename $PWD`-staging'
-alias db-backup-production='heroku pgbackups:capture --remote production'
-alias db-backups='heroku pgbackups --remote production'
 
 # tmux
 alias tmux="TERM=screen-256color-bce tmux"
@@ -114,11 +54,6 @@ alias env-4d="source ~/.envrc/env-4d"
 alias env-ink="source ~/.envrc/env-ink"
 alias env-euca2="source ~/.virtualenvs/euca2ools/bin/activate; source ~/.envrc/euca2/eucarc"
 
-# disable autocorrect for some things
-alias heroku='nocorrect heroku'
-alias knife='nocorrect knife'
-alias cc-knife='nocorrect cc-knife'
-
 # coreutils on OSX
 if [[ $platform == 'Darwin' ]]; then
   alias readlink='greadlink'
@@ -126,23 +61,6 @@ fi
 
 alias hiddenon="defaults write com.apple.finder AppleShowAllFiles -boolean true && killall Finder"
 alias hiddenoff="defaults delete com.apple.finder AppleShowAllFiles && killall Finder"
-
-# PHP Dev aliases
-alias nginx.start='sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
-alias nginx.stop='sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
-alias nginx.restart='nginx.stop && nginx.start'
-alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php55.plist"
-alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php55.plist"
-alias php-fpm.restart='php-fpm.stop && php-fpm.start'
-alias mysql.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
-alias mysql.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
-alias mysql.restart='mysql.stop && mysql.start'
-alias nginx.logs.error='tail -250f /usr/local/etc/nginx/logs/error.log'
-alias nginx.logs.access='tail -250f /usr/local/etc/nginx/logs/access.log'
-alias nginx.logs.default.access='tail -250f /usr/local/etc/nginx/logs/default.access.log'
-alias nginx.logs.default-ssl.access='tail -250f /usr/local/etc/nginx/logs/default-ssl.access.log'
-alias nginx.logs.phpmyadmin.error='tail -250f /usr/local/etc/nginx/logs/phpmyadmin.error.log'
-alias nginx.logs.phpmyadmin.access='tail -250f /usr/local/etc/nginx/logs/phpmyadmin.access.log'
 
 # Dev environment updates
 alias lobsterink-db-mysql-update='aria2c http://staging.lobsterink.com/lobsterink_dev.sql.tar.gz && tar xzf lobsterink_dev.sql.tar.gz && mysql -uroot lobsterink_dev < home/ubuntu/lobsterink_dev.sql'
