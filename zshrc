@@ -48,9 +48,13 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx golang ruby github node npm brew history-substring-search docker aws bower tmux tmuxinator)
+plugins=(git osx golang ruby github node npm brew history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
+
+# Source my custom files after oh-my-zsh so I can override things.
+source $HOME/.dotfiles/zsh/aliases
+source $HOME/.dotfiles/zsh/functions
 
 # User configuration
 
@@ -66,6 +70,7 @@ export PATH="/usr/local/heroku/bin:/Users/kgf/gcp/bin:~/bin:/usr/local/bin:/usr/
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -78,3 +83,6 @@ source /Users/kgf/google-cloud-sdk/path.zsh.inc
 
 # The next line enables bash completion for gcloud.
 source /Users/kgf/google-cloud-sdk/completion.zsh.inc
+
+# added by travis gem
+[ -f /Users/kgf/.travis/travis.sh ] && source /Users/kgf/.travis/travis.sh
