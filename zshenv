@@ -11,8 +11,8 @@ export GOROOT=$HOME/go
 export GOOS=darwin
 export GOARCH=amd64
 export GOBIN=$GOROOT/bin
+export GOPATH=$HOME/code/go
 export PATH=$PATH:$GOBIN
-export GOPATH=$HOME/code/4eek/go:$HOME/code/4D/go:$HOME/code/LobsterInk/go
 
 # EC2 tools
 export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home --request`

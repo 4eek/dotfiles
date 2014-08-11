@@ -2,71 +2,46 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-
-" ================
-" Ruby stuff
-" ================
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on " Enable filetype-specific indenting and plugins
 
-augroup myfiletypes
-  " Clear old autocmds in group
-  autocmd!
-  " autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
-  autocmd FileType go set ai sw=4 sts=4 et
-augroup END
-" ================
+" autocmd WinEnter *.go set ai sw=4 ts=4 sta et fo=croql list!
+" autocmd BufEnter *.go set ai sw=4 ts=4 sta et fo=croql list!
+" autocmd BufNewFile *.go set ai sw=4 ts=4 sta et fo=croql list!
 
-" ================
-" Go stuff
-" ================
-autocmd WinEnter *.go set ai sw=4 ts=4 sta et fo=croql list!
-autocmd BufEnter *.go set ai sw=4 ts=4 sta et fo=croql list!
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
-" ================
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
 let mapleader = "\\"
 
 nmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a{ :Tabularize /{<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
-vmap <Leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
 map <Leader>cc :!cucumber --drb %<CR>
 map <Leader>co :TComment<CR>
 map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
 map <Leader>gac :Gcommit -m -a ""<LEFT>
 map <Leader>gc :Gcommit -m ""<LEFT>
 map <Leader>gs :Gstatus<CR>
-map <Leader>f :sp spec/factories.rb<CR>
 map <Leader>fix :cnoremap % %<CR>
-map <Leader>fa :sp test/factories.rb<CR>
 map <Leader>h :CommandT<CR>
 map <Leader>i mmgg=G`m<CR>
-map <Leader>l :!ruby -I"test" -I"spec" %<CR>
-map <Leader>m :Rmodel 
 map <Leader>n :set nopaste<cr>
 map <Leader>o :call RunCurrentLineInTest()<CR>
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
-map <Leader>rd :!bundle exec rspec % --format documentation<CR>
 map <Leader>rf :CommandTFlush<CR>
 map <Leader>rw :%s/\s\+$//
-map <Leader>sc :sp db/schema.rb<cr>
-map <Leader>sm :RSmodel 
-map <Leader>snip :e ~/.vim/snippets/ruby.snippets<CR>
 map <Leader>so :so %<cr>
-map <Leader>su :RSunittest 
-map <Leader>sv :RSview 
-map <Leader>t :call RunCurrentTest()<CR>
-map <Leader>y :!rspec --drb %<cr>
-map <Leader>u :Runittest<cr>
-map <Leader>vc :RVcontroller<cr>
-map <Leader>vf :RVfunctional<cr>
 map <Leader>vi :tabe ~/.vimrc<CR>
-map <Leader>vu :RVunittest<CR>
-map <Leader>vm :RVmodel<cr>
-map <Leader>vv :RVview<cr>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
 " remove trailing whitespace
@@ -107,7 +82,7 @@ set incsearch
 "set noincsearch
 "set ignorecase smartcase
 set laststatus=2  " Always show status line.
-set number 
+set number
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set autoindent " always set autoindenting on
 set bg=light
@@ -137,7 +112,7 @@ let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;
 highlight StatusLine ctermfg=blue ctermbg=yellow
 
 " Format xml files
-au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null" 
+au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 " Node.js dictionary
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
@@ -147,7 +122,7 @@ set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 set nofoldenable " Say no to code folding...
 
 command! Q q " Bind :Q to :q
-command! Qall qall 
+command! Qall qall
 
 set statusline+=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
@@ -162,7 +137,7 @@ let g:CommandTMaxHeight=50
 let g:CommandTMatchWindowAtTop=1
 
 " When loading text files, wrap them and don't split up words.
-au BufNewFile,BufRead *.txt setlocal wrap 
+au BufNewFile,BufRead *.txt setlocal wrap
 au BufNewFile,BufRead *.txt setlocal lbr
 
 " Better? completion on command line
@@ -192,28 +167,6 @@ endfunction
 
 nmap <C-W>u :call MergeTabs()<CR>
 
-function! CorrectTestRunner()
-  if match(expand('%'), '\.feature$') != -1
-    return "cucumber"
-  elseif match(expand('%'), '_spec\.rb$') != -1
-    return "rspec"
-  else
-    return "ruby"
-  endif
-endfunction
-
-function! RunCurrentTest()
-  if CorrectTestRunner() == "ruby"
-    exec "!ruby" expand('%:p')
-  else
-    exec "!" . CorrectTestRunner() . " --drb" . " " . expand('%:p')
-  endif
-endfunction
-
-function! RunCurrentLineInTest()
-  exec "!" . CorrectTestRunner() . " --drb" . " " . expand('%:p') . ":" . line(".")
-endfunction
-
 imap <Tab> <C-P>
 
 " Let's be reasonable, shall we?
@@ -221,20 +174,20 @@ nmap k gk
 nmap j gj
 
 " Show $ at end of line and trailing space as ~
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set list
+" set list
+" set listchars=eol:·,tab:»·,trail:~,extends:>,precedes:<
+" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 set background=dark
 colorscheme solarized
-
-" Extension customisation
-au BufNewFile,BufRead *.apib set filetype=ruby
 
 " Toggle spell checking on and off with `,s`
 nmap <silent> <leader>sp :set spell!<CR>
 
 " Set region to British English
 set spelllang=en_gb
+
+let g:go_bin_path = $GOBIN
 
 " ========================================================================
 " End of things set by me.
