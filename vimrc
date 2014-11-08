@@ -178,6 +178,7 @@ nmap j gj
 " set listchars=eol:·,tab:»·,trail:~,extends:>,precedes:<
 " set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
+let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
 
