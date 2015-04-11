@@ -88,3 +88,5 @@ source /Users/kgf/google-cloud-sdk/completion.zsh.inc
 
 # added by travis gem
 [ -f /Users/kgf/.travis/travis.sh ] && source /Users/kgf/.travis/travis.sh
+
+eval "$(rbenv init -)"
