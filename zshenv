@@ -1,18 +1,19 @@
 # Customize to your needs...
 export PATH="$HOME/go/bin:/usr/local/bin:$HOME/bin:/usr/local/sbin:/usr/local/mysql/bin:$HOME/bin/ec2-api-tools/bin:/opt/local/bin:/opt/local/sbin:/opt/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/MacGPG2/bin:/usr/local/libexec/git-core"
 
-# export DYLD_LIBRARY_PATH=/usr/local/opt/cairo/lib
-
-# Node
+# Node & NPM
 export NODE_PATH=/usr/local/lib/node_modules
+export NPM_PACKAGES="$HOME/.npm-packages"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+
+# Android Studio
+export PATH="$HOME/Library/Android/sdk/tools:$PATH"
 
 # Google Go Lang Vars
-export GOROOT=$HOME/go
-export GOOS=darwin
-export GOARCH=amd64
-export GOBIN=$GOROOT/bin
 export GOPATH=$HOME/code/go
-export PATH=$PATH:$GOBIN
+export PATH=$PATH:$GOPATH/bin
+
 
 # EC2 tools
 export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home --request`

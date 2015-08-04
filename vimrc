@@ -188,7 +188,7 @@ nmap <silent> <leader>sp :set spell!<CR>
 " Set region to British English
 set spelllang=en_gb
 
-let g:go_bin_path = $GOBIN
+let g:go_bin_path = $GOPATH.'/bin'
 
 set shell=/bin/zsh
 

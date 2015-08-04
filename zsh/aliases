@@ -10,7 +10,7 @@ alias getmyip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias amend="git commit --amend"
 alias aliases='vim ~/.dotfiles/zsh/aliases'
 alias c='cd ~/code'
-alias cdc='cd ~/code/go/src/github.com/LobsterInk'
+alias cdc='cd ~/code/go/src/github.com/EdTechCo'
 alias d='cd ~/.dotfiles'
 alias dr='cd ~/Dropbox'
 alias gad='git add .'
@@ -42,7 +42,7 @@ alias irb='irb --readline -r irb/completion'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
 alias so='source ~/.dotfiles/zsh/aliases'
 alias vi='vim'
-alias ghp='open https://github.com/LobsterInk'
+alias ghp='open https://github.com/EdTechCo'
 alias tvp='open https://magnum.travis-ci.com/'
 
 # tmux
