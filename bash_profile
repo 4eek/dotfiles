@@ -16,3 +16,6 @@ source /Users/kgf/google-cloud-sdk/path.bash.inc
 source /Users/kgf/google-cloud-sdk/completion.bash.inc
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# added by Anaconda3 2.3.0 installer
+export PATH="/Users/kgf/anaconda3/bin:$PATH"

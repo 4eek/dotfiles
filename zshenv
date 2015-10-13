@@ -22,5 +22,8 @@ export EC2_AMITOOL_HOME=$HOME/bin/ec2-ami-tools
 export AWS_EB_HOME=$HOME/bin/AWS-ElasticBeanstalk-CLI
 export PATH=$PATH:$EC2_HOME/bin:$EC2_AMITOOL_HOME/bin:$AWS_EB_HOME/eb/linux/python2.7
 
+# Anaconda
+export PATH=$PATH:$HOME/anaconda3/bin
+
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
